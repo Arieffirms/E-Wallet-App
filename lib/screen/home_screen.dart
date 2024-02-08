@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 23,
                       backgroundImage:
                           NetworkImage('https://i.pravatar.cc/150?img=11'),
                     ),
@@ -51,17 +51,39 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 5,
                       ),
                       Text(
-                        "arief firmansyah",
+                        "Arief firmansyah",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 15),
-                      )
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 15,
+                        ),
+                      ),
                     ],
-                  )
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Stack(
+                      children: [
+                        Icon(
+                          Icons.notifications_none_rounded,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        Positioned(
+                          top: 0.0,
+                          right: 0.0,
+                          child: Icon(
+                            Icons.brightness_1,
+                            size: 8.0,
+                            color: Colors.redAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
