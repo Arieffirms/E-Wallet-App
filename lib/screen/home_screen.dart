@@ -1,3 +1,4 @@
+import 'package:e_wallet_app/widgets/menu_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -107,6 +108,76 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 30,
                           fontWeight: FontWeight.w700,
                           color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MenuBox(
+                    icon: Icons.send_rounded,
+                    text: "kirim",
+                  ),
+                  MenuBox(
+                    icon: Icons.account_balance_wallet,
+                    text: "Terima",
+                  ),
+                  MenuBox(
+                    icon: Icons.payment,
+                    text: "Bayar",
+                  ),
+                  MenuBox(
+                    icon: Icons.more_horiz,
+                    text: "Lainnya",
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                top: 50,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(45),
+                ),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 30,
+                      horizontal: 25,
+                    ),
+                    child: Row(
+                      children: [
+                        const Expanded(
+                          child: Text(
+                            'Transaksi Terakhir',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onDoubleTap: () {},
+                          child: Text(
+                            'Lihat Semua',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black45,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   )
                 ],
