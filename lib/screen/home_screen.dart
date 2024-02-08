@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: CircleAvatar(
                       radius: 23,
@@ -37,32 +37,34 @@ class _HomeScreenState extends State<HomeScreen> {
                           NetworkImage('https://i.pravatar.cc/150?img=11'),
                     ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Hello",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                  const Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Hello",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "Arief firmansyah",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15,
+                        SizedBox(
+                          height: 5,
                         ),
-                      ),
-                    ],
+                        Text(
+                          "Arief firmansyah",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Stack(
+                    icon: const Stack(
                       children: [
                         Icon(
                           Icons.notifications_none_rounded,
@@ -84,6 +86,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            Container(
+              padding: const EdgeInsets.only(top: 30),
+              alignment: Alignment.center,
+              child: Column(
+                children: const [
+                  Text(
+                    "Saldo",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
