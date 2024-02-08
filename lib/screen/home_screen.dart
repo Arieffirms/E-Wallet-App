@@ -98,6 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Text(
+                      'Rp,20,000,000,00-;',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
                   )
                 ],
               ),
