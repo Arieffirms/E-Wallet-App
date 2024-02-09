@@ -1,4 +1,7 @@
+import 'package:e_wallet_app/models/transactiom.dart';
 import 'package:e_wallet_app/widgets/menu_box.dart';
+import 'package:e_wallet_app/widgets/transaction_detail.dart';
+import 'package:e_wallet_app/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -137,50 +140,69 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(
-                top: 50,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(45),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(
+                  top: 50,
                 ),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 30,
-                      horizontal: 25,
-                    ),
-                    child: Row(
-                      children: [
-                        const Expanded(
-                          child: Text(
-                            'Transaksi Terakhir',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(45),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 30,
+                        horizontal: 25,
+                      ),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            child: Text(
+                              'Transaksi Terakhir',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                        GestureDetector(
-                          onDoubleTap: () {},
-                          child: Text(
-                            'Lihat Semua',
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black45,
+                          GestureDetector(
+                            onDoubleTap: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  isScrollControlled: true,
+                                  builder: (BuildContext ctx) {
+                                    return DetailTransactionScreen();
+                                  });
+                            },
+                            child: Text(
+                              'Lihat Semua',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black45,
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
-                  )
-                ],
+                    Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (context, index) {
+                          return TransactionItem(
+                            transaction: transaction[index],
+                          );
+                        },
+                        itemCount: transaction.length,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],
